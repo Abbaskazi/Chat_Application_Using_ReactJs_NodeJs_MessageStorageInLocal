@@ -22,7 +22,7 @@ const Chat = ({ username, onLogout }) => {
     let expectedPendingCount = 0;
 
     // Initialize socket connection with reconnection enabled
-    const newSocket = io('http://localhost:3001', {
+    const newSocket = io('https://chat-backend-56f1.onrender.com', {
       reconnection: true,
       reconnectionDelay: 1000,
       reconnectionDelayMax: 5000,
