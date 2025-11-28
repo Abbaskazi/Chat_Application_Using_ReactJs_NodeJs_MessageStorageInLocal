@@ -48,7 +48,7 @@ export const subscribeToPush = async (username) => {
 
   try {
     // Get VAPID public key from backend
-    const response = await fetch('http://localhost:3001/api/vapid-public-key');
+    const response = await fetch('https://chat-backend-56f1.onrender.com/api/vapid-public-key');
     const { publicKey } = await response.json();
 
     if (!publicKey) {
@@ -69,7 +69,7 @@ export const subscribeToPush = async (username) => {
     }
 
     // Save subscription to backend
-    await fetch('http://localhost:3001/api/push-subscription', {
+    await fetch('https://chat-backend-56f1.onrender.com/api/push-subscription', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
