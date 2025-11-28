@@ -21,14 +21,14 @@ if (PUBLIC_VAPID_KEY === "YOUR_PUBLIC_VAPID_KEY_HERE" || PRIVATE_VAPID_KEY === "
 // Configure web push
 webpush.setVapidDetails(
   "mailto:your@email.com",
-  PUBLIC_VAPID_KEY,
-  PRIVATE_VAPID_KEY
+  process.env.PUBLIC_VAPID_KEY,
+  process.env.PRIVATE_VAPID_KEY
 );
 
 // Configure CORS for Socket.IO
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:5173", // Vite default port
+    origin: "https://chatapp-three-gold.vercel.app/", // Vite default port
     methods: ["GET", "POST"],
     credentials: true
   }
